@@ -3,26 +3,31 @@ import Image from 'next/image';
 const HeroSection = () => {
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-12">
+      <div className="grid grid-cols-1 sm:grid-cols-12">
         {/* text */}
-        <div className="col-span-7 place-self-center">
-          <h1 className="text-white mb-4 text-4xl lg:text-6xl font-extrabold">
-            Hello, I&apos;m Shaikh
+        <div className="col-span-7 place-self-center text-center sm:text-left">
+          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-blue-600">
+              Hello, I&apos;m{' '}
+            </span>
+            Shaikh
           </h1>
-          <p className="text-[#ADB7BE] mb-6 text-lg lg:text-xl tracking-wider font-bold">
+          <p className="text-[#ADB7BE] mb-6 text-lg sm:text-xl tracking-wider font-bold">
             Developer by Passion, Engineer by Mind!
           </p>
-          <p className="text-white lg:text-lg mb-4">
-            Aspiring MERN Stack Developer and Digital Engineering graduate
-            student, eager on building effective and creative user interfaces
-            with React, Next.js, HTML5, CSS3, JavaScript, Express and MongoDB.
+          <p className="text-white text-base sm:text-lg mb-6">
+            Aspiring MERN Stack Developer, eager on building effective and
+            creative user interfaces with React, Next.js, HTML5, CSS3,
+            JavaScript, Express and MongoDB.
           </p>
           <div>
-            <button className="px-6 py-3 rounded-full mr-4 bg-white hover:bg-slate-200 text-black">
+            <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-rose-500 text-white hover:bg-slate-200">
               Learn More
             </button>
-            <button className="px-6 py-3 rounded-full bg-transparent hover:bg-slate-800 text-white border border-white">
-              Download Resume
+            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-rose-500 hover:bg-slate-800 text-white mt-3">
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                Download Resume
+              </span>
             </button>
           </div>
         </div>
