@@ -4,6 +4,7 @@ import Image from 'next/image';
 import NavLink from './NavLink';
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import MenuOverlay from './MenuOverlay';
 
 const navLinks = [
   {
@@ -23,8 +24,8 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
+      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         {/* logo */}
         <Link
           href={'/'}
@@ -65,6 +66,8 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+        {/* mobile device menu overlay */}
+        {navbarOpen && <MenuOverlay links={navLinks} />}
       </div>
     </nav>
   );

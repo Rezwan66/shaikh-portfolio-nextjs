@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         {/* text */}
-        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+        <div className="col-span-8 place-self-center text-center sm:text-left sm:justify-self-start">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">
               Hello, I&apos;m{' '}
@@ -31,7 +31,8 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] mb-6 text-lg sm:text-xl tracking-wider font-bold">
-            Developer by Passion, Engineer by Mind!
+            Developer by Passion, <br className="sm:block lg:hidden hidden" />{' '}
+            Engineer by Mind!
           </p>
           {/* <p className="text-white text-base sm:text-lg mb-6">
             Aspiring MERN Stack Developer, eager on building effective and
