@@ -1,8 +1,10 @@
 'use client';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
+  const [showName, setShowName] = useState(true);
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -12,23 +14,25 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">
               Hello, I&apos;m{' '}
             </span>
+            <span>Shaikh Rezwan</span>
             <br />
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                'Shaikh Rezwan',
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
-                'Web Developer',
+                // 'Shaikh Rezwan',
+                // 1000, // wait 1s before replacing "Mice" with "Hamsters"
+                'Web',
                 1000,
-                'React Developer',
+                'React',
                 1000,
-                'MERN Developer',
+                'MERN',
                 1000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
             />
+            <span>Developer</span>
           </h1>
           <p className="text-[#ADB7BE] mb-6 text-lg sm:text-xl tracking-wider font-bold">
             Developer by Passion, <br className="sm:block lg:hidden hidden" />{' '}
