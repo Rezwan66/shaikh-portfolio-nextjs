@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import '../styles/componentStyles.css';
 
 const HeroSection = () => {
   const [showName, setShowName] = useState(true);
@@ -25,7 +26,7 @@ const HeroSection = () => {
                 1000,
                 'React',
                 1000,
-                'MERN',
+                'MERN Stack',
                 1000,
               ]}
               wrapper="span"
@@ -56,7 +57,7 @@ const HeroSection = () => {
         </div>
         {/* image */}
         <div className="col-span-4 place-self-center mt-6 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[325px] lg:h-[325px] relative overflow-hidden">
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[325px] lg:h-[325px] relative overflow-hidden border-4 border-yellow-500 glow-border">
             <Image
               src="/images/noBgProfile.png"
               alt="hero image"
