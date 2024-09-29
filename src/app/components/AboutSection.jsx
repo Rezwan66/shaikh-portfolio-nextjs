@@ -1,10 +1,50 @@
 'use client';
 import Image from 'next/image';
 import { useState, useTransition } from 'react';
+import TabButton from './TabButton';
+
+const TAB_DATA = [
+  {
+    title: 'Skills',
+    id: 'skills',
+    content: (
+      <ul className="list-disc pl-2">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript / TypeScript</li>
+        <li>React.js</li>
+        <li>Node.js</li>
+        <li>Express</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+      </ul>
+    ),
+  },
+  {
+    title: 'Education',
+    id: 'education',
+    content: (
+      <ul className="list-disc pl-2">
+        <li>M.Sc. Digital Engineering - OVGU, Magdeburg, Germany</li>
+        <li>B.Sc. Electrical Engineering - IUT, Bangladesh</li>
+      </ul>
+    ),
+  },
+  {
+    title: 'Experience',
+    id: 'experience',
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Working Student - Intelligent Search Developer @ SAP</li>
+        <li>Student Assistant - Infrastructure and Methods @ DZHW</li>
+      </ul>
+    ),
+  },
+];
 
 const AboutSection = () => {
   const [tab, setTab] = useState('skills');
-  const [startTransition, isPending] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
   const handleTabChange = id => {
     startTransition(() => {
@@ -18,11 +58,11 @@ const AboutSection = () => {
         <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
           <Image
             src="/images/about-image.png"
-            width={300}
-            height={300}
+            width={500}
+            height={500}
             alt="about image"
           />
-          <div>
+          <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
             <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
             <p className="text-base lg:text-lg">
               Aspiring MERN Stack Developer and Digital Engineering graduate
@@ -32,15 +72,27 @@ const AboutSection = () => {
               MongoDB.
             </p>
             <div className="flex flex-row mt-8">
-              <span className="mr-3 font-semibold hover:text-white text-[#ADB7BE] cursor-pointer border-b border-yellow-500">
+              <TabButton
+                active={tab === 'skills'}
+                selectTab={() => handleTabChange('skills')}
+              >
                 Skills
-              </span>
-              <span className="mr-3 font-semibold hover:text-white text-[#ADB7BE] cursor-pointer border-b border-yellow-500">
+              </TabButton>
+              <TabButton
+                active={tab === 'education'}
+                selectTab={() => handleTabChange('education')}
+              >
                 Education
-              </span>
-              <span className="mr-3 font-semibold hover:text-white text-[#ADB7BE] cursor-pointer border-b border-yellow-500">
+              </TabButton>
+              <TabButton
+                active={tab === 'experience'}
+                selectTab={() => handleTabChange('experience')}
+              >
                 Experience
-              </span>
+              </TabButton>
+            </div>
+            <div className="mt-8">
+              {TAB_DATA.find(t => t.id === tab).content}
             </div>
           </div>
         </div>

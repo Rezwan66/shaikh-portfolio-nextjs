@@ -15,25 +15,25 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">
               Hello, I&apos;m{' '}
             </span>
-            <span>Shaikh Rezwan</span>
+            {/* <span>Shaikh Rezwan</span> */}
             <br />
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
-                // 'Shaikh Rezwan',
-                // 1000, // wait 1s before replacing "Mice" with "Hamsters"
-                'Web',
+                'Shaikh Rezwan',
+                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                'Web Developer',
                 1000,
-                'React',
+                'React Developer',
                 1000,
-                'MERN Stack',
+                'MERN Developer',
                 1000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
             />
-            <span>Developer</span>
+            {/* <span>Developer</span> */}
           </h1>
           <p className="text-[#ADB7BE] mb-6 text-lg sm:text-xl tracking-wider font-bold">
             Developer by Passion, <br className="sm:block lg:hidden hidden" />{' '}
