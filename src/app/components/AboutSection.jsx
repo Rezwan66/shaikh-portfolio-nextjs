@@ -8,7 +8,7 @@ const TAB_DATA = [
     title: 'Skills',
     id: 'skills',
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 space-y-1">
         <li>HTML5</li>
         <li>CSS3</li>
         <li>JavaScript / TypeScript</li>
@@ -24,9 +24,23 @@ const TAB_DATA = [
     title: 'Education',
     id: 'education',
     content: (
-      <ul className="list-disc pl-2">
-        <li>M.Sc. Digital Engineering - OVGU, Magdeburg, Germany</li>
-        <li>B.Sc. Electrical Engineering - IUT, Bangladesh</li>
+      <ul className="list-disc pl-2 space-y-4">
+        <li>
+          <ul className="space-y-2">
+            <li>M.Sc. Digital Engineering</li>
+            <li className="text-sm">
+              <i>Otto von Guericke University, Magdeburg, Germany</i>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul className="space-y-2">
+            <li>B.Sc. Electrical Engineering</li>
+            <li className="text-sm">
+              <i>IUT, Bangladesh</i>
+            </li>
+          </ul>
+        </li>
       </ul>
     ),
   },
@@ -34,9 +48,28 @@ const TAB_DATA = [
     title: 'Experience',
     id: 'experience',
     content: (
-      <ul className="list-disc pl-2">
-        <li>Working Student - Intelligent Search Developer @ SAP</li>
-        <li>Student Assistant - Infrastructure and Methods @ DZHW</li>
+      <ul className="list-disc pl-2 space-y-4">
+        <li>
+          <ul className="space-y-2">
+            <li>Working Student - Intelligent Search Developer</li>
+            <li className="text-sm">
+              <i>
+                <strong>Company:</strong> SAP, Walldorf, Baden-Württemberg
+              </i>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul className="space-y-2">
+            <li>Student Assistant - Infrastructure and Methods</li>
+            <li className="text-sm">
+              <i>
+                <strong>Company:</strong> DZHW (German Centre for Higher
+                Education Research and Science Studies)
+              </i>
+            </li>
+          </ul>
+        </li>
       </ul>
     ),
   },
