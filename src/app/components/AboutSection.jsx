@@ -8,16 +8,34 @@ const TAB_DATA = [
     title: 'Skills',
     id: 'skills',
     content: (
-      <ul className="list-disc pl-2 space-y-1">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript / TypeScript</li>
-        <li>React.js</li>
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>MongoDB</li>
-      </ul>
+      <div className="flex flex-col gap-6">
+        <div className="flex items-center gap-6">
+          <h3>
+            <i>
+              <strong>Frontend:</strong>
+            </i>
+          </h3>
+          <ul className="list-disc pl-2 space-y-1">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript / TypeScript</li>
+            <li>React.js</li>
+          </ul>
+        </div>
+        <div className="flex items-center gap-6">
+          <h3>
+            <i>
+              <strong>Backend:</strong>
+            </i>
+          </h3>
+          <ul className="list-disc pl-2 space-y-1">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+      </div>
     ),
   },
   {
@@ -27,7 +45,9 @@ const TAB_DATA = [
       <ul className="list-disc pl-2 space-y-4">
         <li>
           <ul className="space-y-2">
-            <li>M.Sc. Digital Engineering</li>
+            <li>
+              <strong>M.Sc. Digital Engineering</strong>
+            </li>
             <li className="text-sm">
               <i>Otto von Guericke University, Magdeburg, Germany</i>
             </li>
@@ -35,7 +55,9 @@ const TAB_DATA = [
         </li>
         <li>
           <ul className="space-y-2">
-            <li>B.Sc. Electrical Engineering</li>
+            <li>
+              <strong>B.Sc. Electrical Engineering</strong>
+            </li>
             <li className="text-sm">
               <i>IUT, Bangladesh</i>
             </li>
@@ -51,7 +73,9 @@ const TAB_DATA = [
       <ul className="list-disc pl-2 space-y-4">
         <li>
           <ul className="space-y-2">
-            <li>Working Student - Intelligent Search Developer</li>
+            <li>
+              <strong>Working Student - Intelligent Search Developer</strong>
+            </li>
             <li className="text-sm">
               <i>
                 <strong>Company:</strong> SAP, Walldorf, Baden-Württemberg
@@ -61,7 +85,9 @@ const TAB_DATA = [
         </li>
         <li>
           <ul className="space-y-2">
-            <li>Student Assistant - Infrastructure and Methods</li>
+            <li>
+              <strong>Student Assistant - Infrastructure and Methods</strong>
+            </li>
             <li className="text-sm">
               <i>
                 <strong>Company:</strong> DZHW (German Centre for Higher
