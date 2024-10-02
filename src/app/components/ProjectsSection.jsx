@@ -2,7 +2,7 @@ const ProjectsSection = () => {
   return (
     <>
       <div>
-        <h2> HELLO I Am ProjectsSection </h2>
+        <h2> Here we will map our projects </h2>
       </div>
     </>
   );
