@@ -69,10 +69,29 @@ const projectsData = [
 const ProjectsSection = () => {
   return (
     <>
+      {/* title */}
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         {' '}
         My Projects{' '}
       </h2>
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <button className="rounded-full border-2 border-yellow-500 px-4 py-2 text-xl cursor-pointer">
+          All
+        </button>
+        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
+          Travel & Tourism
+        </button>
+        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
+          Task Management
+        </button>
+        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
+          E-commerce
+        </button>
+        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
+          Events Management
+        </button>
+      </div>
+      {/* project cards */}
       <div className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData?.map(project => (
           <ProjectCard
