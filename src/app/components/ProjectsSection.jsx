@@ -7,7 +7,8 @@ const projectsData = [
   {
     id: 1,
     title: 'Explore Nest',
-    description: 'Project 1 description',
+    description:
+      'Tourist guide platform with role-based dashboards, JWT auth, and user-personalised offers on booking.',
     image: '/images/projects/explore-nest.jpg',
     tag: ['All', 'Travel & Tourism'],
     gitUrl: '/',
@@ -16,7 +17,8 @@ const projectsData = [
   {
     id: 2,
     title: 'Auto Maniac',
-    description: 'Project 2 description',
+    description:
+      'Car marketplace with brand-based product filtering and shopping cart checkout option.',
     image: '/images/projects/auto-maniac.jpg',
     tag: ['All', 'E-commerce'],
     gitUrl: '/',
