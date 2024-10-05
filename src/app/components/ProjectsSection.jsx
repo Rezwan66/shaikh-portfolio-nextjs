@@ -27,7 +27,8 @@ const projectsData = [
   {
     id: 3,
     title: 'Travel Buddy',
-    description: 'Project 3 description',
+    description:
+      'Carpool and ride-sharing website with JWT security, Axios interceptor, and a visually appealing dark mode.',
     image: '/images/projects/travel-buddy.jpg',
     tag: ['All', 'Travel & Tourism'],
     gitUrl: '/',
