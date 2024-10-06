@@ -46,7 +46,8 @@ const projectsData = [
   {
     id: 5,
     title: 'Entertainment Freak',
-    description: 'Authentication and CRUD operations',
+    description:
+      'Responsive event management SPA to explore and book entertainment events and concert tickets.',
     image: '/images/projects/entertainment-freak.jpg',
     tag: ['All', 'Events Management'],
     gitUrl: '/',
