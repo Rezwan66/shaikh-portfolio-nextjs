@@ -28,7 +28,7 @@ const projectsData = [
     id: 3,
     title: 'Travel Buddy',
     description:
-      'Carpool and ride-sharing website with JWT security, Axios interceptor, and a visually appealing dark mode.',
+      'Carpool and ride-sharing website with user-based actions and a visually appealing dark mode.',
     image: '/images/projects/travel-buddy.jpg',
     tag: ['All', 'Travel & Tourism'],
     gitUrl: '/',
@@ -37,7 +37,8 @@ const projectsData = [
   {
     id: 4,
     title: 'Task Master',
-    description: 'Project 4 description',
+    description:
+      'Intelligent task management platform allowing users to sign up, sign in, and manage their tasks efficiently.',
     image: '/images/projects/task-master.jpg',
     tag: ['All', 'Task Management'],
     gitUrl: '/',
@@ -56,7 +57,8 @@ const projectsData = [
   {
     id: 6,
     title: 'Bistro Boss',
-    description: 'Project 5 description',
+    description:
+      'Online Food Order platform that allows customers to place orders for different food items.',
     image: '/images/projects/bistro-boss.jpg',
     tag: ['All', 'E-commerce'],
     gitUrl: '/',
@@ -65,7 +67,8 @@ const projectsData = [
   {
     id: 7,
     title: 'Stay Vista',
-    description: 'Project 5 description',
+    description:
+      'Simple user-friendly hotel booking platform to browse, filter, book, and manage accommodation.',
     image: '/images/projects/stay-vista.jpg',
     tag: ['All', 'Travel & Tourism'],
     gitUrl: '/',
