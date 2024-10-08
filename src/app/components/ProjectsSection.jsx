@@ -58,7 +58,7 @@ const projectsData = [
     id: 6,
     title: 'Bistro Boss',
     description:
-      'Online Food Order platform that allows customers to place orders for different food items.',
+      'Online food order platform that allows customers to place orders for different food items.',
     image: '/images/projects/bistro-boss.jpg',
     tag: ['All', 'E-commerce'],
     gitUrl: '/',
