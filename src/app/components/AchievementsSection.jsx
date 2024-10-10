@@ -5,7 +5,7 @@ const achievementsList = [
     postfix: '+',
   },
   {
-    prefix: '~',
+    // prefix: '~',
     metric: 'Users',
     value: '1,000',
   },
