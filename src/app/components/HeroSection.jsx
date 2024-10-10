@@ -12,7 +12,7 @@ const HeroSection = () => {
         {/* text */}
         <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I&apos;m{' '}
             </span>
             {/* <span>Shaikh Rezwan</span> */}
@@ -45,11 +45,11 @@ const HeroSection = () => {
             JavaScript, Express and MongoDB.
           </p> */}
           <div>
-            <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 text-white hover:text-black">
+            <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-secondary-500 via-tertiary-500 to-primary-500 text-white hover:text-black">
               Learn More
             </button>
-            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 hover:bg-slate-800 text-white mt-3">
-              <span className="block bg-[#121212] hover:bg-gradient-to-bl from-orange-500 via-amber-500 to-yellow-500  rounded-full px-5 py-2">
+            <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-secondary-500 via-tertiary-500 to-primary-500 hover:bg-slate-800 text-white mt-3">
+              <span className="block bg-[#121212] hover:bg-gradient-to-bl from-secondary-500 via-tertiary-500 to-primary-500  rounded-full px-5 py-2">
                 Download Resume
               </span>
             </button>
@@ -57,7 +57,7 @@ const HeroSection = () => {
         </div>
         {/* image */}
         <div className="col-span-4 place-self-center mt-6 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[325px] lg:h-[325px] relative overflow-hidden border-4 border-yellow-500 glow-border">
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[325px] lg:h-[325px] relative overflow-hidden border-4 border-primary-500 glow-border">
             <Image
               src="/images/noBgProfile.png"
               alt="hero image"

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,8 +16,18 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite'
-      }
+      },
+      // boxShadow: {
+      //   'glow-primary': `0 0 15px 15px ${colors.blue[500]}`,
+      //   'opacity': '0.8'
+      // }
     },
-    plugins: [],
-  }
+    colors: {
+      ...colors,
+      primary: colors.yellow,
+      secondary: colors.orange,
+      tertiary: colors.amber
+    }
+  },
+  plugins: [],
 };
