@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
+import { motion, useInView } from 'framer-motion';
 
 const projectsData = [
   {
@@ -78,14 +79,22 @@ const projectsData = [
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState('All');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const handleTagChange = newTag => {
     setTag(newTag);
   };
   const filteredProjects = projectsData?.filter(project =>
     project.tag.includes(tag)
   );
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
-    <>
+    <section>
       {/* title */}
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         {' '}
@@ -132,19 +141,26 @@ const ProjectsSection = () => {
         </button> */}
       </div>
       {/* project cards */}
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects?.map(project => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-          />
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+        {filteredProjects?.map((project, idx) => (
+          <motion.li
+            key={idx}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? 'animate' : 'initial'}
+            transition={{ duration: 0.3, delay: idx * 0.4 }}
+          >
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
         ))}
-      </div>
-    </>
+      </ul>
+    </section>
   );
 };
 export default ProjectsSection;
