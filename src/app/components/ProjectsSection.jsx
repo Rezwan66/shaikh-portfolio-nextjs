@@ -101,7 +101,7 @@ const ProjectsSection = () => {
         My Projects{' '}
       </h2>
       {/* project tags selector */}
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className="text-white flex flex-row justify-between md:justify-center overflow-x-auto items-center gap-2 my-6">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -141,7 +141,10 @@ const ProjectsSection = () => {
         </button> */}
       </div>
       {/* project cards */}
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul
+        ref={ref}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+      >
         {filteredProjects?.map((project, idx) => (
           <motion.li
             key={idx}
