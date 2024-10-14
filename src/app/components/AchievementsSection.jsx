@@ -1,5 +1,6 @@
 'use client';
 import dynamic from 'next/dynamic';
+import '../styles/componentStyles.css';
 
 const AnimatedNumbers = dynamic(
   () => {
@@ -33,12 +34,12 @@ const achievementsList = [
 const AchievementsSection = () => {
   return (
     <section className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="border-[#33353F] border rounded-md py-8 px-16 flex md:flex-row flex-col gap-4 md:gap-0 items-center justify-between">
+      <div className="border-[#33353F] hover:border-primary-500 border rounded-md py-8 px-16 flex md:flex-row flex-col gap-4 md:gap-0 items-center justify-between">
         {achievementsList.map((achievement, idx) => {
           return (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center mx-4"
+              className="flex flex-col items-center justify-center mx-4 hover:scale-110 cursor-pointer"
             >
               <h2 className="text-white text-4xl font-bold flex flex-row">
                 {achievement?.prefix}
