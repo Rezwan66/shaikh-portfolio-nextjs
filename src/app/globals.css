@@ -27,6 +27,15 @@ body {
   /* background-color: black; */
 }
 
+/* .nav-item .active {
+  padding-bottom: 12px;
+  border-bottom: 3px solid yellow;
+} */
+
+.active {
+  @apply border-b-2 border-b-primary-500 text-white;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
