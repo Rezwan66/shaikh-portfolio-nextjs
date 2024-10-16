@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import '../styles/componentStyles.css';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const HeroSection = () => {
   const [showName, setShowName] = useState(true);
@@ -51,9 +52,19 @@ const HeroSection = () => {
             JavaScript, Express and MongoDB.
           </p> */}
           <div>
-            <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-secondary-500 via-tertiary-500 to-primary-500 text-white hover:text-black">
-              Learn More
-            </button>
+            <Link
+              to="about"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-150}
+              duration={500}
+            >
+              <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-secondary-500 via-tertiary-500 to-primary-500 text-white hover:text-black">
+                Learn More
+              </button>
+            </Link>
+
             <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-br from-secondary-500 via-tertiary-500 to-primary-500 hover:bg-slate-800 text-white mt-3">
               <span className="block bg-[#121212] hover:bg-gradient-to-bl from-secondary-500 via-tertiary-500 to-primary-500  rounded-full px-5 py-2">
                 Download Resume
