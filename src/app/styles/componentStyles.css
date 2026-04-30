@@ -1,20 +1,44 @@
 .glow-border {
-  box-shadow: 0 0 15px 5px rgba(234, 179, 8, 0.8);
+  box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.4);
 }
 
-/* @keyframes spin-orbit {
-  0% {
-    transform: rotate(0deg) translateX(125px) rotate(0deg); 
+/* Timeline styles */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #3b82f6, #06b6d4, #8b5cf6);
+  transform: translateX(-50%);
+}
+
+.timeline-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  box-shadow: 0 0 12px 3px rgba(59, 130, 246, 0.5);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Mobile timeline */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
   }
-  100% {
-    transform: rotate(360deg) translateX(125px) rotate(-360deg);
+  .timeline-node {
+    left: 20px;
   }
 }
 
-.animate-spin-orbit {
-  animation: spin-orbit 4s linear infinite;
+/* Skill card glow on hover */
+.skill-card {
+  transition: all 0.3s ease;
 }
-
-.glow-element {
-  box-shadow: 0 0 10px 5px rgba(234, 179, 8, 0.8); 
-} */
+.skill-card:hover {
+  box-shadow: 0 0 20px 3px rgba(59, 130, 246, 0.15);
+}

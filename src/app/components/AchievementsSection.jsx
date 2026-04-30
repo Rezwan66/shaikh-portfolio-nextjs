@@ -1,6 +1,5 @@
 'use client';
 import dynamic from 'next/dynamic';
-import '../styles/componentStyles.css';
 
 const AnimatedNumbers = dynamic(
   () => {
@@ -11,37 +10,37 @@ const AnimatedNumbers = dynamic(
 
 const achievementsList = [
   {
-    metric: 'Projects',
+    metric: 'Projects Built',
     value: '50',
     postfix: '+',
   },
   {
-    prefix: '~',
-    metric: 'Users',
-    value: '1000',
+    metric: 'Years Experience',
+    value: '1',
+    postfix: '.5+',
   },
   {
-    metric: 'Awards',
-    value: '2',
-  },
-  {
-    metric: 'Years',
-    value: '1.5',
+    metric: 'Technologies',
+    value: '15',
     postfix: '+',
+  },
+  {
+    metric: 'Professional Roles',
+    value: '2',
   },
 ];
 
 const AchievementsSection = () => {
   return (
     <section className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="border-[#33353F] hover:border-primary-500 border rounded-md py-8 px-16 flex md:flex-row flex-col gap-4 md:gap-0 items-center justify-between">
+      <div className="glass-card py-8 px-8 md:px-16 flex md:flex-row flex-col gap-6 md:gap-0 items-center justify-between">
         {achievementsList.map((achievement, idx) => {
           return (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center mx-4 hover:scale-110 cursor-pointer"
+              className="flex flex-col items-center justify-center mx-4 group cursor-pointer"
             >
-              <h2 className="text-white text-4xl font-bold flex flex-row">
+              <h2 className="text-white text-4xl font-bold flex flex-row font-[family-name:var(--font-space)] group-hover:text-primary-400 transition-colors">
                 {achievement?.prefix}
                 <AnimatedNumbers
                   includeComma
@@ -58,7 +57,7 @@ const AchievementsSection = () => {
                 />
                 {achievement?.postfix}
               </h2>
-              <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
+              <p className="text-[#94a3b8] text-sm mt-1">{achievement.metric}</p>
             </div>
           );
         })}

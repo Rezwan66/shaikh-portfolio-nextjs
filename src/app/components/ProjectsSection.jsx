@@ -3,79 +3,8 @@ import { useState, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 import { motion, useInView } from 'framer-motion';
-
-const projectsData = [
-  {
-    id: 1,
-    title: 'Explore Nest',
-    description:
-      'Tourist guide platform with role-based dashboards, JWT auth, and user-personalised offers on booking.',
-    image: '/images/projects/explore-nest.jpg',
-    tag: ['All', 'Travel & Tourism'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 2,
-    title: 'Auto Maniac',
-    description:
-      'Car marketplace with brand-based product filtering and shopping cart checkout option.',
-    image: '/images/projects/auto-maniac.jpg',
-    tag: ['All', 'E-commerce'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 3,
-    title: 'Travel Buddy',
-    description:
-      'Carpool and ride-sharing website with user-based actions and a visually appealing dark mode.',
-    image: '/images/projects/travel-buddy.jpg',
-    tag: ['All', 'Travel & Tourism'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 4,
-    title: 'Task Master',
-    description:
-      'Intelligent task management platform allowing users to sign up, sign in, and manage their tasks efficiently.',
-    image: '/images/projects/task-master.jpg',
-    tag: ['All', 'Task Management'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 5,
-    title: 'Entertainment Freak',
-    description:
-      'Responsive event management SPA to explore and book entertainment events and concert tickets.',
-    image: '/images/projects/entertainment-freak.jpg',
-    tag: ['All', 'Events Management'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 6,
-    title: 'Bistro Boss',
-    description:
-      'Online food order platform that allows customers to place orders for different food items.',
-    image: '/images/projects/bistro-boss.jpg',
-    tag: ['All', 'E-commerce'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 7,
-    title: 'Stay Vista',
-    description:
-      'Simple user-friendly hotel booking platform to browse, filter, book, and manage accommodation.',
-    image: '/images/projects/stay-vista.jpg',
-    tag: ['All', 'Travel & Tourism'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-];
+import SectionHeading from './SectionHeading';
+import { projectsData } from '../data/projectsData';
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState('All');
@@ -85,80 +14,55 @@ const ProjectsSection = () => {
   const handleTagChange = newTag => {
     setTag(newTag);
   };
+
   const filteredProjects = projectsData?.filter(project =>
     project.tag.includes(tag)
   );
+
+  const tags = ['All', 'Full Stack', 'Frontend'];
+
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
 
   return (
-    <section id="projects" className="my-24">
-      {/* title */}
-      <h2 className="text-center text-4xl font-bold text-white mb-8 md:mb-12">
-        {' '}
-        My Projects{' '}
-      </h2>
+    <section id="projects" className="py-16 md:py-24">
+      <SectionHeading subtitle="Some of the projects I've built">
+        My Projects
+      </SectionHeading>
       {/* project tags selector */}
-      <div className="text-white flex flex-row justify-between md:justify-center overflow-x-auto items-center gap-2 my-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === 'All'}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Travel & Tourism"
-          isSelected={tag === 'Travel & Tourism'}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Task Management"
-          isSelected={tag === 'Task Management'}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="E-commerce"
-          isSelected={tag === 'E-commerce'}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Events Management"
-          isSelected={tag === 'Events Management'}
-        />
-        {/* <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
-          Travel & Tourism
-        </button>
-        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
-          Task Management
-        </button>
-        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
-          E-commerce
-        </button>
-        <button className="rounded-full border-2 border-slate-500 hover:border-white px-4 py-2 text-xl cursor-pointer">
-          Events Management
-        </button> */}
+      <div className="flex flex-row justify-center items-center gap-3 mb-10 px-4">
+        {tags.map((tagName) => (
+          <ProjectTag
+            key={tagName}
+            onClick={handleTagChange}
+            name={tagName}
+            isSelected={tag === tagName}
+          />
+        ))}
       </div>
       {/* project cards */}
       <ul
         ref={ref}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 xl:px-16"
       >
         {filteredProjects?.map((project, idx) => (
           <motion.li
-            key={idx}
+            key={project.id}
             variants={cardVariants}
             initial="initial"
             animate={isInView ? 'animate' : 'initial'}
-            transition={{ duration: 0.3, delay: idx * 0.4 }}
+            transition={{ duration: 0.3, delay: idx * 0.15 }}
           >
             <ProjectCard
+              id={project.id}
               title={project.title}
               description={project.description}
               imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
+              techStack={project.techStack}
+              githubUrl={project.githubUrl}
+              liveUrl={project.liveUrl}
             />
           </motion.li>
         ))}
