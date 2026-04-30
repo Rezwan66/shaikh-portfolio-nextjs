@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shaikh Rezwan — Portfolio
 
-## Getting Started
+A modern, professional portfolio website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**. Featuring a sleek dark theme with glassmorphism effects, animated skill bars, and dynamic project detail pages.
 
-First, run the development server:
+🔗 **Live Site:** [shaikh-portfolio-nextjs.vercel.app](https://shaikh-portfolio-nextjs.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **Responsive Design** — Fully optimized for desktop, tablet, and mobile
+- **Dark Theme** — Modern blue/cyan/violet palette with glassmorphism cards
+- **Smooth Animations** — Scroll-triggered reveals, type animation, and floating effects
+- **Dynamic Project Pages** — Individual detail pages for each project with tech stack, challenges, and improvements
+- **Skills Visualization** — Animated progress bars organized by category
+- **Experience Timeline** — Interactive timeline with gradient accents
+- **Contact Form** — Integrated with Resend API for email delivery
+- **SEO Optimized** — Proper meta tags, OpenGraph data, and semantic HTML
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Framework** | Next.js 14 (App Router) |
+| **Styling** | Tailwind CSS 3, Custom CSS |
+| **Animation** | Framer Motion, React Type Animation |
+| **Icons** | Heroicons, Inline SVGs |
+| **Email** | Resend API |
+| **Fonts** | Inter, Space Grotesk (Google Fonts) |
+| **Deployment** | Vercel |
+
+## 📁 Project Structure
+
+```
+src/app/
+├── page.js                    # Main landing page
+├── layout.js                  # Root layout with fonts & metadata
+├── globals.css                # Design system & utilities
+├── projects/[id]/page.jsx     # Dynamic project detail pages
+├── api/send/route.js          # Contact form API endpoint
+├── data/projectsData.js       # Centralized project data
+├── styles/componentStyles.css # Timeline & animation styles
+└── components/
+    ├── Navbar.jsx              # Glassmorphism navigation bar
+    ├── HeroSection.jsx         # Hero with type animation & socials
+    ├── AchievementsSection.jsx # Animated number stats
+    ├── AboutSection.jsx        # Personal introduction & hobbies
+    ├── SkillsSection.jsx       # Categorized skill progress bars
+    ├── ExperienceSection.jsx   # Timeline-based work experience
+    ├── EducationSection.jsx    # Education cards
+    ├── ProjectsSection.jsx     # Filterable project grid
+    ├── ProjectCard.jsx         # Individual project card
+    ├── EmailSection.jsx        # Contact info & form
+    ├── Footer.jsx              # Three-column footer
+    └── SectionHeading.jsx      # Reusable section title
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+# Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Run development server
+npm run dev
 
-## Learn More
+# Build for production
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Create a `.env.local` file with:
 
-## Deploy on Vercel
+```
+RESEND_API_KEY=your_resend_api_key
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+© 2026 Shaikh Rezwan. All rights reserved.
